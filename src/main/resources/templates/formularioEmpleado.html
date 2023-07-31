@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<form action="#"
+	th:action="@{/empleado/new/submit}"
+	th:object="${empleadoForm}"
+	method="post">
+	
+<div class="form-group"> <label for="elId">Id</label><input type="text" id="elId" th:field="*{id}" placeholder="id"></input> </div>
+<div class="form-group"> <label for="elNombre">Nombre<input type="text" id="elNombre" th:field="*{nombre}" placeholder="Nombre"></input> </div>
+<div class="form-group"> <label for="elApellido">Apellido<input type="text" id="elApellido" th:field="*{apellido}" placeholder="Apellido"></input>  </div>
+<div class="form-group"> <label for="elTelefono">Telefono<input type="tel" id="elTelefono" th:field="*{telefono}" placeholder="900 000 000"></input> </div>
+<div class="form-group"> <label for="elDirectivo">Directivo?<input type="checkbox" id="elDirectivo" th:field="*{directivo}"></input> </div>
+<div>  <button type="submit">Enviar</button> </div>
+	
+</form>
