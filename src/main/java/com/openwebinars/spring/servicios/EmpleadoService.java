@@ -61,8 +61,9 @@ public class EmpleadoService {
 			empleadoAntiguo = listaEmpleados.get(indice);
 			if(empleadoAntiguo.getId() == empleado.getId()) {
 				encontrado = true;
+				listaEmpleados.set(indice, empleado);
 			}
-			listaEmpleados.set(indice, empleado);
+			
 		}
 		return empleado;
 	}

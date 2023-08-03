@@ -4,6 +4,9 @@
 <h1>Listado de empleados</h1>
 
 			<h1>Listado de empleados de la empresa</h1>
+			<!-- Botón para ir al formulario de añadir empleado -->
+			<a th:href="@{/empleado/new}" class="btn btn-primary">Añadir Empleado</a>
+
 			<table class="table">
 				<thead>
 					<tr>
@@ -11,6 +14,7 @@
 						<th>Nombre</th>
 						<th>Teléfono</th>
 						<th>Directivo</th>
+						<th>Editar</th>
 						</tr>
 				</thead>
 				<tbody>
@@ -20,6 +24,10 @@
 						<td th:text="${empleado.apellido}">Pérez</td>
 						<td th:text="${empleado.telefono}">900000000</td>
 						<td th:text="${empleado.directivo}">False</td>
+						<td>
+                			<!-- Construir la URL del enlace a la página de edición -->
+                			<a th:href="@{/empleado/edit/{id}(id=${empleado.id})}">Editar</a>
+            			</td>
 					</tr>
 				</tbody>
 			</table>
