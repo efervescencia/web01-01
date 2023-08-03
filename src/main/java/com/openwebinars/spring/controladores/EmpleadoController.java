@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.openwebinars.spring.modelo.Empleado;
@@ -37,6 +38,20 @@ public class EmpleadoController {
 		servicio.add(nuevoEmpleado);
 		return "redirect:/empleado/list";
 	}
+
+	@GetMapping( "/empleado/edit/{id}" )
+	public String editarEmpleado(@PathVariable("id") long id, Model model) {
+		Empleado empleado = servicio.find(id);
+		model.addAttribute("empleadoForm", empleado);
+		
+		return "formularioEmpleado";
+	}
 	
+	
+	@PostMapping( "/empleado/edit/submit")
+	public String editarEmpleadoSubmit(@ModelAttribute("empleadoForm") Empleado empleado) {
+		servicio.update(empleado);
+		return "redirect:/empleado/list";
+	}
 
 }

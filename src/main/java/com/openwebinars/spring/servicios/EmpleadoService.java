@@ -35,4 +35,36 @@ public class EmpleadoService {
 		listaEmpleados.add(empleado4);
 	}
 
+	public Empleado find(long id) {
+		// TODO Auto-generated method stub
+		boolean encontrado=false;
+		int indice = 0;
+		Empleado empleado = null;
+		
+		while(!encontrado && indice < listaEmpleados.size()) {
+			empleado = listaEmpleados.get(indice);
+			if(empleado.getId() == id) {
+				encontrado = true;
+			}
+			indice++;
+		}
+		return empleado;
+	}
+
+	public Empleado update(Empleado empleado) {
+		// TODO Auto-generated method stub
+		boolean encontrado=false;
+		int indice = 0;
+		Empleado empleadoAntiguo = null;
+		
+		while(!encontrado && indice < listaEmpleados.size()) {
+			empleadoAntiguo = listaEmpleados.get(indice);
+			if(empleadoAntiguo.getId() == empleado.getId()) {
+				encontrado = true;
+			}
+			listaEmpleados.set(indice, empleado);
+		}
+		return empleado;
+	}
+	
 }
