@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+<h3 th:text="@{( ${empleadoForm.id} == 0 ? 'Nuevo Empleado' : 'Editar Empleado')}">Nuevo Empleado</h3>
 
 <form action="#"
 	th:action="@{( ${empleadoForm.id} == 0 ? @{/empleado/new/submit} : @{/empleado/edit/submit})}"
@@ -24,3 +25,6 @@
 <div>  <button type="submit">Enviar</button> </div>
 	
 </form>
+<br>
+<a th:href="@{/empleado/list}">Volver al listado</a>
+            		

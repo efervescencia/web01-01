@@ -2,14 +2,14 @@ package com.openwebinars.spring.modelo;
 
 public class Empleado {
 	
-	private Long id;
+	private long id;
 	private String nombre;
 	private String apellido;
 	private String telefono;
 	private Boolean directivo;
 	
 	
-	public Empleado(Long id, String nombre, String apellido, String telefono, Boolean directivo) {
+	public Empleado(long id, String nombre, String apellido, String telefono, Boolean directivo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -21,11 +21,11 @@ public class Empleado {
 	public Empleado() {
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
